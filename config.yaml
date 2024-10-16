@@ -1,0 +1,19 @@
+model_path: "./models/llama/"  # Путь к модели
+data_path: "./data/PUD/"  # Путь к папке с ПУДами
+output_folder: "./results/"  # Путь, где сохраняется результат обработки
+
+# Параметры обработки строк
+processing:
+  mode: 'all'  # Опции: 'all', 'solo', 'random' discipline_name, id_search
+  solo_index: 155  # Используется, если mode = 'solo'
+  discipline_name: 'Практический Data Science' # Используется, если mode = 'discipline_name'
+  id_list: [7521983738, 16281496517, 16281496523, 16281499734, 7002863180, 6570668655, 16281498547, 4482321334, 6528164102, 16281498887]  # Список ID для поиска.  Используется, если mode = 'id_search'
+  enable_id_check: true  # Проверка по ID (используем ID дисциплины БУП ППК (АСАВ))
+
+# Параметры генерации с помощью LLaMA
+generation_params:
+  max_new_tokens: 250  # Количество новых токенов для генерации
+  num_return_sequences: 1  # Количество возвращаемых последовательностей
+  do_sample: True  # Включение семплирования
+  top_k: 15  # Параметр top-k семплирования
+  top_p: 0.9  # Параметр nucleus семплирования (top-p)
